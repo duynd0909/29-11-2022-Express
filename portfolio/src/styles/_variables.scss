@@ -1,0 +1,26 @@
+[data-theme="light"]{
+  --cinder:#232E35;
+  --cinder-light:#656D72;
+  --purple:#7E74F1;
+  --purple-light:#EAE6FE;
+  --white:#FFFFFF;
+  --light:#FBFBFB;
+  --darker-light:#F1F1F1;
+  --gray-light:#D9D9D9;
+;
+
+} 
+[data-theme="dark"] {
+  --cinder:#FFFFFF;
+  --cinder-light:#FFFFFF;
+  --purple:#7E74F1;
+  --purple-light:#EAE6FE;
+  --white:#1E1E1E;
+  --light:#1E1E1E;
+  --darker-light:#F1F1F1;
+  --gray-light:#FFFFFF;
+
+}
+
+$primary-font: 'Inter', sans-serif;
+$secondary-font:'Plus Jakarta Sans', sans-serif;
