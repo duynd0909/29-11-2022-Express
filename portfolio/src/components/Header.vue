@@ -5,11 +5,17 @@
       <span>Duy.</span>
     </div>
     <div class="header__menu">
-      <div class="menu-item">Services</div>
+      <!-- <div class="menu-item">Services</div>
       <div class="menu-item">Portfolios</div>
-      <div class="menu-item">Experience</div>
-      <div class="menu-item" v-on:click.prevent="doScrolling('#bottom',1000)">
-        Blog
+      <div class="menu-item">Experience</div> -->
+      <div
+        v-for="menu in menuList"
+        :key="menu.code"
+        class="menu-item"
+        :class="{ 'menu-item--active': menuActive === menu.code }"
+        v-on:click.prevent="doScrolling(menu.code, 1000)"
+      >
+        {{ menu.name }}
       </div>
       <div class="menu-item">...</div>
     </div>
@@ -26,13 +32,36 @@ import logoIcon from "@/assets/logo.svg";
 import moonIcon from "@/assets/moon.svg";
 </script>
 <script lang="ts">
+import { MENU_CODE } from "@/components/MenuConstants";
 export default {
   data() {
     return {
       theme: "light",
+      menuActive: MENU_CODE.CODE_INTRODUCTION,
+      menuList: [
+        {
+          name: "Introduction",
+          code: MENU_CODE.CODE_INTRODUCTION,
+        },
+        {
+          name: "Services",
+          code: MENU_CODE.CODE_SERVICES,
+        },
+        {
+          name: "Portfolios",
+          code: MENU_CODE.CODE_PORTFOLIOS,
+        },
+        {
+          name: "Experiences",
+          code: MENU_CODE.CODE_EXPERIENCES,
+        },
+      ],
     };
   },
   methods: {
+    changeMenu(element: any) {
+      this.menuActive = element;
+    },
     changeTheme() {
       this.theme = this.theme === "light" ? "dark" : "light";
       document.documentElement.setAttribute("data-theme", this.theme);
@@ -44,8 +73,9 @@ export default {
       );
     },
     doScrolling(element: any, duration: number) {
+      this.changeMenu(element);
       var startingY = window.pageYOffset;
-      var elementY = this.getElementY(element);
+      var elementY = this.getElementY(`#${element}`);
       // If element is close to page's bottom then window will scroll only to some position above the element.
       var targetY =
         document.body.scrollHeight - elementY < window.innerHeight
@@ -111,6 +141,10 @@ export default {
     padding: 15px;
     .menu-item {
       cursor: pointer;
+      &--active {
+        font-weight: 500;
+        font-size: 16px;
+      }
     }
     .menu-item + .menu-item {
       margin-left: 56px;

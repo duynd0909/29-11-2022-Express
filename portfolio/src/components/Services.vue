@@ -1,5 +1,5 @@
 <template>
-  <div class="services">
+  <div class="services" :id="MENU_CODE.CODE_SERVICES">
     <div class="services__container">
       <headline :headline="`SERVICES`" :sub-healine="`Specialized in`" />
       <div class="services__list">
@@ -16,6 +16,7 @@
   </div>
 </template>
 <script setup lang="ts">
+import { MENU_CODE } from "@/components/MenuConstants";
 </script>
 <script lang="ts">
 import Headline from "@/components/Headline.vue";

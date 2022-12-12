@@ -4,6 +4,7 @@
     <Overview />
     <Services />
     <MyWorks/>
+    <career-path></career-path>
   </div>
 </template>
 <script setup lang="ts"></script>
@@ -12,13 +13,15 @@ import Header from "@/components/Header.vue";
 import Overview from "@/components/Overview.vue";
 import Services from "@/components/Services.vue";
 import MyWorks from "@/components/MyWorks.vue";
+import CareerPath from "@/components/CareerPath.vue";
 
 export default {
   components: {
     Header,
     Overview,
     Services,
-    MyWorks
+    MyWorks,
+    CareerPath
   },
 };
 </script>
