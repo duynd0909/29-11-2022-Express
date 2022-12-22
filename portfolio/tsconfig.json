@@ -7,8 +7,8 @@
       "@/*": ["./src/*"]
     },
     "preserveValueImports":false,
-    "isolatedModules": false
-
+    "isolatedModules": false,
+    "types": ["node", "jest"],
   },
 
   "references": [

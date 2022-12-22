@@ -3,8 +3,8 @@
     <div class="services__container">
       <headline :headline="`SERVICES`" :sub-healine="`Specialized in`" />
       <div class="services__list">
-        <service-item 
-          v-for="(service, index) in servicesList" 
+        <service-item
+          v-for="(service, index) in servicesList"
           :key="index"
           :icon="service.icon"
           :title="service.title"
@@ -30,19 +30,19 @@ export default {
     return {
       servicesList: [
         {
-          icon: 'crown.png',
+          icon: "crown.png",
           title: "UI/UX Design",
           description:
             "Turn what you have in mind of a digital product into reality. For any platform you consider.",
         },
         {
-          icon: 'crown.png',
+          icon: "crown.png",
           title: "UI/UX Design",
           description:
             "Turn what you have in mind of a digital product into reality. For any platform you consider.",
         },
         {
-          icon: 'crown.png',
+          icon: "crown.png",
           title: "UI/UX Design",
           description:
             "Turn what you have in mind of a digital product into reality. For any platform you consider.",

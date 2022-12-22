@@ -16,41 +16,32 @@
 </template>
 <script setup lang="ts">
 import type Menu from "@/types/Menu";
-import { defineProps, PropType, ref, reactive, computed } from "vue";
-// interface JobDetail {
-//   id: number;
-//   title: string;
-//   detailTitle: string;
-//   location: string;
-//   timeline: string;
-//   technologies: Array<string>;
-//   description: Array<string>;
-// }
-
-// const props = defineProps({
-//   jobList:{
-//     type: Object as PropType<Array<JobDetail>>
-//     re
-//   }
-// });
+import { PropType, ref } from "vue";
+const emit = defineEmits({
+  "update:modelValue": (selectedKey) => {
+    return selectedKey
+  },
+});
 const props = defineProps({
   menuList: {
     type: Object as PropType<Array<Menu>>,
     required: true,
   },
+  value: {
+    type: String,
+    required: false,
+    default: () => "",
+  },
 });
-const openKeys = ref(1);
-const selectedKeys = ref(props.menuList[0].key);
+const selectedKeys = ref(props.value);
 const imageSrc = ref(
   new URL(`../assets/arrow-right.png`, import.meta.url).href
 );
-const activeItemClass = ref(1);
-
 function onChangeSelectedKey(key: string) {
   selectedKeys.value = key;
+  emit("update:modelValue", key);
 }
 </script>
-
 <style lang="scss" scoped>
 .menu {
   font-weight: 500;

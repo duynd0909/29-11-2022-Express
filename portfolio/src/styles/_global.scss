@@ -3,3 +3,12 @@ body {
   font-family: $primary-font;
   width: auto;
 }
+
+.steps{
+  min-height: 90px;
+  &__item:last-child{
+    .tail{
+      display: none;
+    }
+  }
+}

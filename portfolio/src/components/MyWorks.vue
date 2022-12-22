@@ -60,7 +60,7 @@ export default {
       }
     }
   }
-  &__list{
+  &__list {
     margin-top: 145px;
     display: flex;
     gap: 56px;

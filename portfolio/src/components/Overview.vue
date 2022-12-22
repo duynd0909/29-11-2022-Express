@@ -35,7 +35,6 @@ import twitterIcon from "@/assets/Twitter.png";
 import linkedInIcon from "@/assets/LinkedIn.png";
 import lines from "@/assets/lines.png";
 import { MENU_CODE } from "@/components/MenuConstants";
-
 </script>
 <script lang="ts">
 import Headline from "@/components/Headline.vue";

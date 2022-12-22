@@ -53,14 +53,14 @@ export default {
   flex-direction: column;
   &__thumbnail {
     width: 100%;
-    img{
+    img {
       border-radius: 8px 8px 0px 0px;
     }
   }
   &__information {
     border-width: 0px 1px 1px 1px;
     border-style: solid;
-    border-color:#F5F5F5;
+    border-color: #f5f5f5;
     border-radius: 0px 0px 8px 8px;
     padding: 24px;
     .title {

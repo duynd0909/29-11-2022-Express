@@ -3,11 +3,17 @@
     <Header />
     <Overview />
     <Services />
-    <MyWorks/>
+    <MyWorks />
     <career-path></career-path>
+    <learning-path></learning-path>
   </div>
 </template>
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { defineAsyncComponent } from 'vue'
+const LearningPath = defineAsyncComponent(() =>
+  import( "@/components/LearningPath.vue")
+)
+</script>
 <script lang="ts">
 import Header from "@/components/Header.vue";
 import Overview from "@/components/Overview.vue";
@@ -21,7 +27,7 @@ export default {
     Overview,
     Services,
     MyWorks,
-    CareerPath
+    CareerPath,
   },
 };
 </script>
