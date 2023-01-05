@@ -2,7 +2,7 @@ import express from "express";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
-
+import UserInforRoute from "./src/routes/UserInfoRoute"
 dotenv.config({ path: `.env.${process.env.NODE_ENV}` }); // change 
 
 const app = express();
@@ -20,6 +20,7 @@ app.get("/", (req: any, res: { json: (arg0: { message: string }) => void }) => {
   res.json({ message: "ok" });
 });
 
+app.use('/api/', UserInforRoute);
 
 /* Error handler middleware */
 app.use((err, req, res, next) => {

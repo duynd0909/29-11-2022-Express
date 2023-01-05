@@ -18,8 +18,5 @@ export default defineConfig({
         additionalData: `@import "@/styles/_variables.scss";@import "@/styles/_mixins.scss";`,
       },
     },
-  },
-  test:{
-    globals:true,
   }
 });

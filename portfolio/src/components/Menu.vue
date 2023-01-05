@@ -16,7 +16,7 @@
 </template>
 <script setup lang="ts">
 import type Menu from "@/types/Menu";
-import { PropType, ref } from "vue";
+import { PropType, ref ,onMounted} from "vue";
 const emit = defineEmits({
   "update:modelValue": (selectedKey) => {
     return selectedKey
@@ -33,6 +33,9 @@ const props = defineProps({
     default: () => "",
   },
 });
+onMounted(()=>{
+  testCallingMount()
+})
 const selectedKeys = ref(props.value);
 const imageSrc = ref(
   new URL(`../assets/arrow-right.png`, import.meta.url).href
@@ -40,6 +43,9 @@ const imageSrc = ref(
 function onChangeSelectedKey(key: string) {
   selectedKeys.value = key;
   emit("update:modelValue", key);
+}
+function testCallingMount(){
+  console.log('Called');
 }
 </script>
 <style lang="scss" scoped>

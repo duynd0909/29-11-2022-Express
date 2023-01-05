@@ -12,12 +12,13 @@
     "test": "vitest --ui",
     "test:update": "vitest -u",
     "coverage": "vitest run --coverage",
-    "cypress":"cypress open"
+    "cypress": "cypress open"
   },
   "dependencies": {
     "cypress": "^12.2.0",
     "pinia": "^2.0.26",
     "sass": "^1.56.1",
+    "sinon": "^15.0.1",
     "uuid": "^9.0.0",
     "vue": "^3.2.45",
     "vue-router": "^4.1.6",
